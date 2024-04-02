@@ -7,7 +7,6 @@ hierarchies:
     folder: Product
     levels:
       - unique_name: Product Line
-      - unique_name: Product Line
       - unique_name: Product Key
 level_attributes:
   - unique_name: Product Line
@@ -18,6 +17,14 @@ level_attributes:
     key_columns:
       - productline
     name_column: productline
+  - unique_name: Product Key
+    label: Product Key
+    contains_unique_names: false
+    dataset: DIMPRODUCT
+    is_unique_key: false
+    key_columns:
+      - productkey
+    name_column: productkey
   - unique_name: Product Category
     label: Product Category
     contains_unique_names: false
@@ -27,12 +34,4 @@ level_attributes:
       - productsubcategorykey
       - productline
     name_column: productsubcategoryname
-  - unique_name: Product Key
-    label: Product Key
-    contains_unique_names: false
-    dataset: DIMPRODUCT
-    is_unique_key: false
-    key_columns:
-      - productkey
-    name_column: productkey
 type: standard
