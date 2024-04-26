@@ -8,6 +8,19 @@ hierarchies:
     levels:
       - unique_name: Product Line
       - unique_name: Product Key
+        secondary_attributes:
+          - unique_name: List Price
+            label: List Price
+            allowed_calcs_for_dma:
+              - Lag
+              - Siblings
+              - Range
+            contains_unique_names: false
+            dataset: DIMPRODUCT
+            is_unique_key: false
+            key_columns:
+              - listprice
+            name_column: listprice
 level_attributes:
   - unique_name: Product Line
     label: Product  Line
@@ -17,6 +30,7 @@ level_attributes:
     key_columns:
       - productline
     name_column: productline
+    sort_column: empty_value
   - unique_name: Product Key
     label: Product Key
     contains_unique_names: false
@@ -25,6 +39,7 @@ level_attributes:
     key_columns:
       - productkey
     name_column: productkey
+    sort_column: empty_value
   - unique_name: Product Category
     label: Product Category
     contains_unique_names: false
